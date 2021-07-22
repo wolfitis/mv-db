@@ -18,4 +18,6 @@ Chrome extension
 
 ## Notes
 - Every component name in react should start with capital letter e.g. CapitalCamalCase
-- create a file for new component
+- Create a file/folder for new components
+- Don't modify a state directly in react (don't mutate), use setters instead. Otherwise it won't trigger render
+- While writing custom hooks name them useSomeName and camelCase e.g. useMyHook
