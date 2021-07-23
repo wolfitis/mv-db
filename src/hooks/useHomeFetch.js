@@ -40,11 +40,16 @@ export const useHomeFetch = () => {
   // 1- inline function and 
   // 2- dependency array to specify different dependencies on when this useEffect to trigger 
   // with empty dependency array useEffect will run once
+  // updated: Initial and search
+  // now it will render everytime a search term is entered
   useEffect(() => {
-    fetchMovies(1);
-  }, []);
+    // to wipeout old state before we do a new search
+    setState(initialState);
+    // update: to enable search 
+    fetchMovies(1, searchTerm);
+  }, [searchTerm]);
 
-  return { state, loading, error, setSearchTerm };
+  return { state, loading, error, searchTerm, setSearchTerm };
   // return <div>H</div>
 
 };
