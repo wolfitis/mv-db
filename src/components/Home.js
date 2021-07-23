@@ -17,9 +17,14 @@ import { useHomeFetch } from '../hooks/useHomeFetch';
 // Image
 import NoImage from '../images/no_image.jpg';
 import SearchBar from './SearchBar';
+import Button from './Button';
 
 const Home = () => {
-  const { state, loading, error, searchTerm, setSearchTerm } = useHomeFetch();
+  const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } = useHomeFetch();
+
+  console.log(state);
+
+  if (error) return <div>Something Went Wrong ...</div>
 
   return (
     <>
@@ -45,7 +50,11 @@ const Home = () => {
           />
         ))}
       </Grid>
-      <Spinner />
+      {/* Only show spinner when loading */}
+      {loading && <Spinner />}
+      {state.page < state.total_pages && !loading && (
+        <Button text='Load More' callback={() => setIsLoadingMore(true)} />
+      )}
     </>
   );
 };
