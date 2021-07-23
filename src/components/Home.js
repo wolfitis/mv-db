@@ -1,5 +1,5 @@
 // It is a container component so we don't have a separate folder
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 // API
 import API from '../API';
 // Config
@@ -9,6 +9,7 @@ import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 import HeroImage from './HeroImage';
 import Grid from './Grid';
 import Thumb from './Thumb';
+import Spinner from './Spinner';
 
 
 // Hook
@@ -40,6 +41,7 @@ const Home = () => {
           />
         ))}
       </Grid>
+      <Spinner />
     </>
   );
 };
