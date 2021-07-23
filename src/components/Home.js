@@ -16,9 +16,10 @@ import Spinner from './Spinner';
 import { useHomeFetch } from '../hooks/useHomeFetch';
 // Image
 import NoImage from '../images/no_image.jpg';
+import SearchBar from './SearchBar';
 
 const Home = () => {
-  const { state, loading, error } = useHomeFetch();
+  const { state, loading, error, setSearchTerm } = useHomeFetch();
 
   return (
     <>
@@ -30,6 +31,7 @@ const Home = () => {
           text={state.results[0].overview}
         />
       ) : null}
+      <SearchBar setSearchTerm={setSearchTerm} />
       <Grid header='Popular Movies'>
         {state.results.map(movie => (
           <Thumb key={movie.id} clickable image={
