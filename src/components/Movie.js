@@ -1,5 +1,31 @@
 import React from 'react';
+// to get the url params we need a hook
+import { useParams } from 'react-router-dom';
 
-const Movie = () => <div>Movie</div>;
+// Config
+import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
+// Components
+import Grid from './Grid';
+import Spinner from './Spinner';
+// Hook
+import { useMovieFetch } from '../hooks/useMovieFetch';
+
+// Image
+import NoImage from '../images/no_image.jpg';
+
+const Movie = () => {
+  const { movieId } = useParams();
+  // example to show how to rename a property when structure-out
+  const { state: movie, loading, error } = useMovieFetch(movieId);
+
+  console.log(movie);
+
+  return (
+    // react-fragment
+    <>
+      <div>Movie</div>
+    </>
+  );
+};
 
 export default Movie;
