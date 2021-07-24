@@ -21,3 +21,7 @@ Chrome extension
 - Create a file/folder for new components
 - Don't modify a state directly in react (don't mutate), use setters instead. Otherwise it won't trigger render
 - While writing custom hooks name them useSomeName and camelCase e.g. useMyHook
+
+
+## Resources
+- reacttraining.com/blog
