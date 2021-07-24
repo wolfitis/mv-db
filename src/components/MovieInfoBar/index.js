@@ -19,3 +19,5 @@ const MovieInforBar = ({ time, budget, revenue }) => (
     </Content>
   </Wrapper>
 );
+
+export default MovieInforBar;
