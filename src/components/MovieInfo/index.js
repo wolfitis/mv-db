@@ -41,3 +41,5 @@ const MovieInfo = ({ movie }) => (
     </Content>
   </Wrapper>
 );
+
+export default MovieInfo;
